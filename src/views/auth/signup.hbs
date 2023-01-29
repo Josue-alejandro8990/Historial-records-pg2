@@ -1,0 +1,117 @@
+<div class="container p-4">
+  <div class="row">
+    <div class="col-md-10 mx-auto">
+      <div class="card text-center">
+        <div class="card-header">
+          <h3>Crear Usuario Del Personal Medico</h3>
+        </div>
+        <img src="/img/newregistro.png" class="card-img-top mx-auto m-2 rounded-circle w-50">
+        <form action="/signup" method="POST">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <p class="p-nombres">Nombres:</p>
+                <input type="type" name="nombres" placeholder="Ingresa tus nombres" class="form-control" autofocus>
+              </div>
+              <div class="form-group">
+                <p class="p-nombres">Fecha de Nacimiento :</p>
+                <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" class="form-control" autofocus>
+              </div>
+              <div class="form-group">
+                <p class="p-nombres">Edad :</p>
+                <input type="type" id="edad" name="edad" placeholder="Ingresa tu edad" class="form-control">
+              </div>
+              <div class="form-group">
+                <p class="p-nombres">DPI :</p>
+                <input type="type" name="dpi" placeholder="Ingresa tu numero de DPI" class="form-control">
+              </div>
+              <div class="form-group">
+                <p class="p-nombres">Telefono :</p>
+                <input type="type" name="telefono" placeholder="Ingresa tu numero de telefono" class="form-control">
+              </div>
+              <div class="form-group">
+                <p class="p-nombres">Usuario :</p>
+                <input type="text" name="usuario" placeholder="Usuario" class="form-control">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <p class="p-nombres">Apellidos:</p>
+                <input type="type" name="apellidos" placeholder="Ingresa tus apellidos" class="form-control">
+              </div>
+              <div class="form-group">
+                <p class="p-nombres">Dirección :</p>
+                <input type="type" name="direccion" placeholder="Ingresa tu dirección" class="form-control">
+              </div>
+              <div class="form-group">
+                <p class="p-nombres">Estado Civil :</p>
+                <select name="estado_civil" class="form-control">
+                  <option value="null">
+                    <selected>Selecciona una opcion</selected>
+                  </option>
+                  <option value="Soltero">Soltero</option>
+                  <option value="Casado">Casado</option>
+                  <option value="Divorciado">Divorciado</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <p class="p-nombres">Genero :</p>
+                <select name="genero" class="form-control">
+                  <option value="null">
+                    <selected>Selecciona una opcion</selected>
+                  </option>
+                  <option value="Masculino">Masculino</option>
+                  <option value="Femenino">Femenino</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <p class="p-nombres">Area de Medicina :</p>
+                <select name="area_medica" class="form-control">
+                  <option value="null">
+                    <selected>Selecciona una opcion</selected>
+                  </option>
+                  <option value="Alergología">Alergología</option>
+                  <option value="Anestesiología y reanimación">Anestesiología y reanimación</option>
+                  <option value="Aparato digestivo">Aparato digestivo</option>
+                  <option value="Cardiología">Cardiología</option>
+                  <option value="Endocrinología y nutrición">Endocrinología y nutrición</option>
+                  <option value="Geriatría">Geriatría</option>
+                  <option value="Hematología y hemoterapia">Hematología y hemoterapia</option>
+                  <option value="Medicina de la educación física y del deporte">Medicina de la educación física y del
+                    deporte</option>
+                  <option value="Medicina espacial">Medicina espacial</option>
+                  <option value="Medicina intensiva">Medicina intensiva</option>
+                  <option value="Medicina interna">Medicina interna</option>
+                  <option value="Medicina legal y forense">Medicina legal y forense</option>
+                  <option value="Medicina preventiva y salud pública">Medicina preventiva y salud pública</option>
+                  <option value="Medicina del trabajo">Medicina del trabajo</option>
+                  <option value="Nefrología">Nefrología</option>
+                  <option value="Neumología">Neumología</option>
+                  <option value="Neurología">Neurología</option>
+                  <option value="Neurofisiología Clínica">Neurofisiología Clínica</option>
+                  <option value="Oncología médica">Oncología médica</option>
+                  <option value="Oncología radioterápica">Oncología radioterápica</option>
+                  <option value="Pediatría">Pediatría</option>
+                  <option value="Psiquiatría">Psiquiatría</option>
+                  <option value="Rehabilitación">Rehabilitación</option>
+                  <option value="Reumatología">Reumatología</option>
+                  <option value="Medicina familiar y comunitaria">Medicina familiar y comunitaria</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <p class="p-nombres"> Contraseña :</p>
+                <input type="password" name="contraseña" placeholder="Contraseña" class="form-control">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <button class="btn btn-success btn-block">
+              Registrarse
+            </button>
+          </div>
+        </div>
+       </form>
+      </div>
+    </div>
+  </div>

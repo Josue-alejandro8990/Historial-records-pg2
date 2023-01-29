@@ -1,0 +1,104 @@
+<body >
+  <div class="container p-4">
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <div class="card text-center">
+          <div class="card-header">
+            <div class="form-group">
+              <a class="btn-return" href="/profile/perfil">
+                <i class="fas fa-remove icon" style="color-white"></i></a>
+            </div>
+          </div>
+          <div class="card-body" id="capture">
+            <h3>Perfil del Personal Medico</h3>
+            <div class="form-group">
+              {{#each perfilesmedicos}}
+              <div class="form-group2">
+                <a class="btn-editperfilmedico" href="/info/edit_perfilmedico/{{id_medico}}">
+                  <i class="fas fa-pencil icon"></i></a>
+                <a class="btn-pdf" onclick="makepdf2({{id_medico}})">
+                  <i class="far fa-file-pdf"></i></a>
+              </div>
+              {{/each}}
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                {{#each perfilesmedicos}}
+                <div class="card ">
+                  <div class="form-group">
+                    <img src="{{perfil}}" class="card-img-top mx-auto m-2 rounded-circle w-50">
+                  </div>
+                </div>
+                <div class="card p-4">
+                  <div class="form-group">
+                    <p class="p-nombres2"> Nombres :</p>
+                    <p class="p-nombres2">{{nombres}}</p>
+                  </div>
+                  <div class="form-group">
+                    <p class="p-nombres2"> Apellidos :</p>
+                    <p class="p-nombres2">{{apellidos}}</p>
+                  </div>
+                  <div class="form-group">
+                    <p class="p-nombres2">Fecha de Nacimiento :</p>
+                    <p class="p-nombres2">{{ formatDate fecha_nacimiento}}</p>
+                  </div>
+                  <div class="form-group">
+                    <p class="p-nombres2">Edad :</p>
+                    <p class="p-nombres2">{{edad}}</p>
+                  </div>
+                  <div class="form-group">
+                    <p class="p-nombres2">Numero de DPI :</p>
+                    <p class="p-nombres2">{{dpi}}</p>
+                  </div>
+                  <div class="form-group">
+                    <p class="p-nombres2">Telefono :</p>
+                    <p class="p-nombres2">{{telefono}}</p>
+                  </div>
+                  <div class="form-group">
+                    <p class="p-nombres2">Dirección :</p>
+                    <p class="p-nombres2">{{direccion}}</p>
+                  </div>
+                  <div class="form-group">
+                    <p class="p-nombres2">Estado Civil :</p>
+                    <p class="p-nombres2">{{estado_civil}}</p>
+                  </div>
+                  <div class="form-group">
+                    <p class="p-nombres2">Genero :</p>
+                    <p class="p-nombres2">{{genero}}</p>
+                  </div>
+                  <div class="form-group">
+                    <p class="p-nombres2">Area de Medicina :</p>
+                    <p class="p-nombres2">{{area_medica}}</p>
+                  </div>
+                  {{/each}}
+                  {{#each usuarios}}
+                  <div class="form-group">
+                    <p class="p-nombres2">Usuario : </p>
+                    <p class="p-nombres2">{{usuario}}</p>
+                  </div>
+                </div>
+                {{/each}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.html2canvas = html2canvas;
+      window.jsPDF = window.jspdf.jsPDF;
+      function makepdf2(id_medico) {
+        html2canvas(document.querySelector("#capture"), {
+          allowTaint: true,
+          useCORS: true,
+          scale: 1
+        }).then(canvas => {
+          var img = canvas.toDataURL("image/png");
+          var doc = new jsPDF();
+          doc.addImage(img, 'PNG',3, 8,200,280);
+          doc.save(id_medico+".pdf");
+        });
+
+      }
+    </script>
+</body>

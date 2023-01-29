@@ -1,0 +1,91 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-10 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <a class="btn-return" href="/perfil">
+                        <i class="fas fa-remove icon" style="color-white"></i></a>
+                    <br>
+                    <h3>Ingresar Nuevo Paciente</h3>
+                </div>
+                <div class="card">
+                    <img src="/img/newregistro.png" class="img-perfil rounded-circle">
+                </div>
+                <form action="/profile/newpaciente" method="POST">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="form-group">
+                                    <p class="p-nombres2"> Nombres :</p>
+                                    <input type="type" name="nombres" placeholder="Ingresa tus nombres"
+                                        class="form-control" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2"> Apellidos :</p>
+                                    <input type="type" name="apellidos" placeholder="Ingresa tus apellidos"
+                                        class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2">Fecha de Nacimiento :</p>
+                                    <input type="date" id="fecha_nacimiento" name="fecha_nacimiento"
+                                        class="form-control" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2">Edad :</p>
+                                    <input type="type" id="edad" name="edad" placeholder="Ingresa tu edad"
+                                        class="form-control">
+                                </div>
+                                 <div class="form-group">
+                                    <p class="p-nombres2">DPI :</p>
+                                    <input type="type" name="dpi" placeholder="Ingresa tu numero de DPI"
+                                        class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="form-group">
+                                    <p class="p-nombres2">Telefono :</p>
+                                    <input type="type" name="telefono" placeholder="Ingresa tu numero de telefono"
+                                        class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2">Dirección :</p>
+                                    <input type="type" name="direccion" placeholder="Ingresa tu dirección"
+                                        class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2">Estado Civil :</p>
+                                    <select name="estado_civil" class="form-control">
+                                        <option value="null">
+                                            <selected>Selecciona una opcion</selected>
+                                        </option>
+                                        <option value="Soltero">Soltero</option>
+                                        <option value="Casado">Casado</option>
+                                        <option value="Divorciado">Divorciado</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2">Genero :</p>
+                                    <select name="genero" class="form-control">
+                                        <option value="null">
+                                            <selected>Selecciona una opcion</selected>
+                                        </option>
+                                        <option value="Masculino">Masculino</option>
+                                        <option value="Femenino">Femenino</option>
+                                    </select>
+                                </div>
+                                      <div class="form-group">
+                            <button class="btn btn-success btn-block">
+                                Crear Nuevo Paciente
+                            </button>
+                        </div>
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

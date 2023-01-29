@@ -1,0 +1,113 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-12 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <a class="btn-return" href="/profile/perfil/{{hemograma.id_paciente}}">
+                        <i class="fas fa-remove icon" style="color-white"></i></a>
+                    <br>
+                    <h3>Actualizacion De Hemograma Completo Del Paciente ID:{{hemograma.id_paciente}}</h3>
+                </div>
+                <form action="/info/edit_hemograma/{{hemograma.id_paciente}}" method="POST">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <p class="p-nombres2">Fecha Del Registro : </p>
+                                    <input class="form-control" type="date" name="fecha" autofocus
+                                        value="{{formatDate hemograma.fecha}}">
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2">Recuento de Globulos Blancos : </p>
+                                    <input type="type" name="r_g_blancos" value="{{hemograma.r_g_blancos}}"
+                                        class="form-control" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2">Neutrofilos : </p>
+                                    <input type="type" name="neutrofilos" value="{{hemograma.neutrofilos}}"
+                                        class="form-control" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2">Eosinofilos : </p>
+                                    <input type="type" name="eosinofilos" value="{{hemograma.eosinofilos}}"
+                                        class="form-control" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2">Basofilos : </p>
+                                    <input type="type" name="basofilos" value="{{hemograma.basofilos}}"
+                                        class="form-control" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2">Linfocitos : </p>
+                                    <input type="type" name="linfocitos" value="{{hemograma.linfocitos}}"
+                                        class="form-control" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2">Hemoglobina Corpuscular Media : </p>
+                                    <input type="type" name="hemoglobina_c_m" value="{{hemograma.hemoglobina_c_m}}"
+                                        class="form-control" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2">Concentración de Hemoglovina Corpuscular Media : </p>
+                                    <input type="type" name="concentracion_hcm" value="{{hemograma.concentracion_hcm}}"
+                                        class="form-control" autofocus>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <p class="p-nombres2">Monocitos : </p>
+                                    <input type="type" name="monocitos" value="{{hemograma.monocitos}}"
+                                        class="form-control" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2">Cayados : </p>
+                                    <input type="type" name="cayados" value="{{hemograma.cayados}}" class="form-control"
+                                        autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2">Recuento de Globulos Rojos : </p>
+                                    <input type="type" name="r_g_rojos" value="{{hemograma.r_g_rojos}}"
+                                        class="form-control" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2">Hemoglobina : </p>
+                                    <input type="type" name="hemoglobina" value="{{hemograma.hemoglobina}}"
+                                        class="form-control" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2">Hematocrito : </p>
+                                    <input type="type" name="hematocrito" value="{{hemograma.hematocrito}}"
+                                        class="form-control" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2">Volumen Corpuscular Media : </p>
+                                    <input type="type" name="v_corupuscular_m" value="{{hemograma.v_corupuscular_m}}"
+                                        class="form-control" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2">Recuento de Plaquetas : </p>
+                                    <input type="type" name="r_plaquetas" value="{{hemograma.r_plaquetas}}"
+                                        class="form-control" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2">Velocidad de Eritrosedimentación :</p>
+                                    <select name="velocidad_eritrodimentacion" class="form-control" autofocus>
+                                        <option value="{{hemograma.velocidad_eritrodimentacion}}">
+                                            <selected>{{hemograma.velocidad_eritrodimentacion}}</selected>
+                                        </option>
+                                        <option value="SI">SI</option>
+                                        <option value="N/A">N/A</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-success btn-block">
+                            Actualizar Registro
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>

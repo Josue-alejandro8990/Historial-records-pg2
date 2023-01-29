@@ -1,0 +1,203 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-12 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <a class="btn-return" href="/profile/perfil/{{prenal.id_paciente}}">
+                        <i class="fas fa-remove icon" style="color-white"></i></a>
+                    <br>
+                    <h3>Actualizacion Del Perfil Renal Del Paciente ID:{{prenal.id_paciente}}</h3>
+                </div>
+                <form action="/info/edit_prenal/{{prenal.id_paciente}}" method="POST">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <p class="p-nombres2">Fecha Del Registro : </p>
+                                    <input class="form-control" type="date" name="fecha" autofocus
+                                        value="{{formatDate prenal.fecha}}">
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2">COLOR : </p>
+                                    <select name="color" class="form-control" autofocus>
+                                        <option value="{{prenal.color}}">
+                                            <selected>{{prenal.color}}</selected>
+                                        </option>
+                                        <option value="CLARA">CLARA</option>
+                                        <option value="AMARILLA">AMARILLA</option>
+                                        <option value="AMBAR">AMBAR</option>
+                                        <option value="ROJA">ROJA</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2">ASPECTO : </p>
+                                    <select name="aspecto" class="form-control" autofocus>
+                                        <option value="{{prenal.aspecto}}">
+                                            <selected>{{prenal.aspecto}}</selected>
+                                        </option>
+                                        <option value="TRASNPARENTE">TRASNPARENTE</option>
+                                        <option value="LIGERAMENTE TURBIA">LIGERAMENTE TURBIA</option>
+                                        <option value="TURBIA">TURBIA</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2">DENSIDAD : </p>
+                                    <input type="type" name="densidad" value="{{prenal.densidad}}" class="form-control"
+                                        autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2">SEDIMIENTO : </p>
+                                    <select name="sedimiento" class="form-control" autofocus>
+                                        <option value="{{prenal.sedimiento}}">
+                                            <selected>{{prenal.sedimiento}}</selected>
+                                        </option>
+                                        <option value="ABUNDANTE">ABUNDANTE</option>
+                                        <option value="ESCASO">ESCASO</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <p class="p-nombres2">SANGRE : </p>
+                                    <select name="sangre" class="form-control" autofocus>
+                                        <option value="{{prenal.sangre}}">
+                                            <selected>{{prenal.sangre}}</selected>
+                                        </option>
+                                        <option value="POSITIVA">POSITIVA</option>
+                                        <option value="NEGATIVA">NEGATIVA</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2">LEUCOCITOS : </p>
+                                    <input type="type" name="leucocitos" value="{{prenal.leucocitos}}"
+                                        class="form-control" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2">PH : </p>
+                                    <input type="type" name="ph" value="{{prenal.ph}}" class="form-control" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2">EPITELIO : </p>
+                                    <select name="epitelio" class="form-control" autofocus>
+                                        <option value="{{prenal.epitelio}}">
+                                            <selected>{{prenal.epitelio}}</selected>
+                                        </option>
+                                        <option value="CANTIDAD BAJA">CANTIDAD BAJA</option>
+                                        <option value="CANTIDAD REGULAR">CANTIDAD REGULAR</option>
+                                        <option value="CANTIDAD EXCESIVA">CANTIDAD EXCESIVA</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2">BACTERIAS :</p>
+                                    <select name="bacterias" class="form-control" autofocus>
+                                        <option value="{{prenal.bacterias}}">
+                                            <selected>{{prenal.bacterias}}</selected>
+                                        </option>
+                                        <option value="ESCASAS">ESCASAS</option>
+                                        <option value="NORMALES">NORMALES</option>
+                                        <option value="EXCESIVAS">EXCESIVAS</option>
+                                    </select>
+                                </div>
+                                 <div class="form-group">
+                                    <p class="p-nombres2">LEVADURAS :</p>
+                                    <select name="levaduras" class="form-control" autofocus>
+                                        <option value="{{prenal.levaduras}}">
+                                            <selected>{{prenal.levaduras}}</selected>
+                                        </option>
+                                        <option value="POSITIVA">POSITIVA</option>
+                                        <option value="NEGATIVA">NEGATIVA</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <p class="p-nombres2">GLUCOSA : </p>
+                                    <select name="glucosa" class="form-control" autofocus>
+                                        <option value="{{prenal.glucosa}}">
+                                            <selected>{{prenal.glucosa}}</selected>
+                                        </option>
+                                        <option value="POSITIVA">POSITIVA</option>
+                                        <option value="NEGATIVA">NEGATIVA</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2">PROTEINAS : </p>
+                                    <select name="proteinas" class="form-control" autofocus>
+                                        <option value="{{prenal.proteinas}}">
+                                            <selected>{{prenal.proteinas}}</selected>
+                                        </option>
+                                        <option value="POSITIVA">POSITIVA</option>
+                                        <option value="NEGATIVA">NEGATIVA</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2">CETONAS : </p>
+                                    <input type="type" name="cetonas" value="{{prenal.cetonas}}" class="form-control"
+                                        autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2">UROBILINOGENO : </p>
+                                    <input type="type" name="urobilinogeno" value="{{prenal.urobilinogeno}}"
+                                        class="form-control" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2">BILIRRUBINA : </p>
+                                    <input type="type" name="bilirrubina" value="{{prenal.bilirrubina}}"
+                                        class="form-control" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2">NITRITOS : </p>
+                                    <select name="nitritos" class="form-control" autofocus>
+                                        <option value="{{prenal.nitritos}}">
+                                            <selected>{{prenal.nitritos}}</selected>
+                                        </option>
+                                        <option value="POSITIVA">POSITIVA</option>
+                                        <option value="NEGATIVA">NEGATIVA</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2">ERITROCITOS :</p>
+                                    <select name="eritrocitos" class="form-control" autofocus>
+                                        <option value="{{prenal.eritrocitos}}">
+                                            <selected>{{prenal.eritrocitos}}</selected>
+                                        </option>
+                                        <option value="EVENTUALES">EVENTUALES</option>
+                                        <option value="N/A">N/A</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2">CRISTALES :</p>
+                                    <input type="type" name="cristales" value="{{prenal.cristales}}"
+                                        class="form-control" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2">CILINDROS :</p>
+                                    <select name="cilindros" class="form-control" autofocus>
+                                        <option value="{{prenal.cilindros}}">
+                                            <selected>{{prenal.cilindros}}</selected>
+                                        </option>
+                                        <option value="NO SE OBSERVARON">NO SE OBSERVARON</option>
+                                        <option value="SI SE OBERVARON">SI SE OBERVARON</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2">MUCOSA :</p>
+                                    <select name="mucosa" class="form-control" autofocus>
+                                        <option value="{{prenal.mucosa}}">
+                                            <selected>{{prenal.mucosa}}</selected>
+                                        </option>
+                                        <option value="ESCASAS">ESCASAS</option>
+                                        <option value="ABUNDANTES">ABUNDANTES</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                <button class="btn btn-success btn-block">
+                                    Actualizar Registro
+                                </button>
+                            </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>

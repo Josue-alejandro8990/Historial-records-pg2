@@ -1,0 +1,159 @@
+
+.buscar {
+    margin-top: 20px;
+    position: relative;
+    padding: 5px;
+  }
+  
+  .buscar-input {
+    float: right;
+    width: 0;
+    height: 30px;
+    padding: 0 20px;
+    font-size: 15px;
+    color: #222;
+    outline: none;
+    border: 1px solid silver;
+    border-radius: 30px;
+    transition: all 0.6s ease;
+  }
+  
+  .btn-search {
+    width: 47px;
+    height: 40px;
+    line-height: 40px;
+    top: 0;
+    right: 0;
+    position: absolute;
+    background: #440088;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .buscar:hover input {
+    width: 240px;
+  }
+  
+  .buscar input:focus {
+    width: 240px;
+  }
+  
+  .btn-edit{
+    width: 47px;
+    height: 40px;
+    line-height: 40px;
+    background: green;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .btn-delete{
+    width: 47px;
+    height: 40px;
+    line-height: 40px;
+    right: 55px;
+    background: red;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .btn-new{
+    width: 47px;
+    height: 40px;
+    line-height: 40px;
+    right: 50px;
+    background: orange;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .btn-return{
+    width: 47px;
+    height: 40px;
+    line-height: 40px;
+    top: 0;
+    right: 0;
+    position: absolute;
+    background: red;
+    color: white;
+    font-size: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .btn-editperfil{
+    width: 47px;
+    height: 40px;
+    line-height: 45px;
+    margin-left: 250px;
+    text-align: center;
+    background:green;
+    color: white;
+    font-size: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .btn-editperfil2{
+    width: 47px;
+    height: 40px;
+    line-height: 45px;
+    margin-left: 190px;
+    text-align: center;
+    background:green;
+    color: white;
+    font-size: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .btn-editperfilmedico{
+    width: 47px;
+    height: 40px;
+    line-height: 45px;
+   position: absolute;
+   top: 0px;
+   right: 50px;
+    text-align: center;
+    background:green;
+    color: white;
+    font-size: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .btn-vistas{
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 20px;
+  display: grid;
+  grid-area: avistas;
+  }
+  .btn-pdf{
+    width: 47px;
+    height: 40px;
+    line-height: 40px;
+    top: 0;
+    left: 380px;
+    position: absolute;
+    background: orange;
+    color: white;
+    font-size: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .btn-pdf2{
+    width: 47px;
+    height: 40px;
+    line-height: 40px;
+    background:orange;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+  }

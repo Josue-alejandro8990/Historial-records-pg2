@@ -1,0 +1,114 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-12 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <a class="btn-return" href="/profile/perfil/{{paciente.id_paciente}}">
+                        <i class="fas fa-remove icon" style="color-white"></i></a>
+                    <br>
+                    <h3>Creación De Hemograma Completo Del Paciente ID:{{paciente.id_paciente}}</h3>
+                </div>
+                <form action="/newinfo/newhemograma/{{paciente.id_paciente}}" method="POST">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <p class="p-nombres">Fecha del laboratorio : </p>
+                                    <input class="form-control" type="date" name="fecha">
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres">Neutrofilos : </p>
+                                    <input type="type" name="neutrofilos" placeholder="Ingrese un valor"
+                                        class="form-control" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres">Basofilos : </p>
+                                    <input type="type" name="basofilos" placeholder="Ingrese un valor"
+                                        class="form-control" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres">Monocitos : </p>
+                                    <input type="type" name="monocitos" placeholder="Ingrese un valor"
+                                        class="form-control" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres">Recuento de Globulos Rojos : </p>
+                                    <input type="type" name="r_g_rojos" placeholder="Ingrese un valor"
+                                        class="form-control" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres">Hematocrito : </p>
+                                    <input type="type" name="hematocrito" placeholder="Ingrese un valor"
+                                        class="form-control" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres">Hemoglobina Corpuscular Media : </p>
+                                    <input type="type" name="hemoglobina_c_m" placeholder="Ingrese un valor"
+                                        class="form-control" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres">Recuento de Plaquetas : </p>
+                                    <input type="type" name="r_plaquetas" placeholder="Ingrese un valor"
+                                        class="form-control" autofocus>
+                                </div>
+                                   <div class="form-group">
+                                    <p class="p-nombres">Velocidad de Eritrosedimentación :</p>
+                                    <select name="velocidad_eritrodimentacion" class="form-control" autofocus>
+                                        <option value="null">
+                                            <selected>Seleccione un valor</selected>
+                                        </option>
+                                        <option value="SI">SI</option>
+                                        <option value="N/A">N/A</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <p class="p-nombres">Recuento de Globulos Blancos : </p>
+                                    <input type="type" name="r_g_blancos" placeholder="Ingrese un valor"
+                                        class="form-control" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres">Eosinofilos : </p>
+                                    <input type="type" name="eosinofilos" placeholder="Ingrese un valor"
+                                        class="form-control" autofocus>
+                                </div>
+
+                                <div class="form-group">
+                                    <p class="p-nombres">Linfocitos : </p>
+                                    <input type="type" name="linfocitos" placeholder="Ingrese un valor"
+                                        class="form-control" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres">Cayados : </p>
+                                    <input type="type" name="cayados" placeholder="Ingrese un valor"
+                                        class="form-control" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres">Hemoglobina : </p>
+                                    <input type="type" name="hemoglobina" placeholder="Ingrese un valor"
+                                        class="form-control" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres">Volumen Corpuscular Media : </p>
+                                    <input type="type" name="v_corupuscular_m" placeholder="Ingrese un valor"
+                                        class="form-control" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres">Concentración de Hemoglovina Corpuscular Media : </p>
+                                    <input type="type" name="concentracion_hcm" placeholder="Ingrese un valor"
+                                        class="form-control" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-success btn-block">
+                                        Crear Registro
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>

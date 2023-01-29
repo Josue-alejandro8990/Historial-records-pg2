@@ -1,0 +1,69 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-12 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <a class="btn-return" href="/profile/perfil/{{plipidico.id_paciente}}">
+                        <i class="fas fa-remove icon" style="color-white"></i></a>
+                    <br>
+                    <h3>Actualizacion Del Perfil Lipidico Del Paciente ID:{{plipidico.id_paciente}}</h3>
+                </div>
+                <form action="/info/edit_plipidico/{{plipidico.id_paciente}}" method="POST">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <p class="p-nombres2">Fecha Del Registro : </p>
+                                    <input class="form-control" type="date" name="fecha" autofocus
+                                        value="{{formatDate plipidico.fecha}}">
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2">COLESTEROL TOTAL : </p>
+                                    <input type="type" name="c_total" value="{{plipidico.c_total}}" class="form-control"
+                                        autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2">COLESTEROL HDL : </p>
+                                    <input type="type" name="c_hdl" value="{{plipidico.c_hdl}}" class="form-control"
+                                        autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2">COLESTEROL LDL : </p>
+                                    <input type="type" name="c_ldl" value="{{plipidico.c_ldl}}" class="form-control"
+                                        autofocus>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <p class="p-nombres2">COLESTEROL VLDL : </p>
+                                    <input type="type" name="c_vldl" value="{{plipidico.c_vldl}}" class="form-control"
+                                        autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2">TRIGLICERIDOS : </p>
+                                    <input type="type" name="trigliceridos" value="{{plipidico.trigliceridos}}"
+                                        class="form-control" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2">RIESGO ATEROGENICO : </p>
+                                    <input type="type" name="riesgo_aterogenico"
+                                        value="{{plipidico.riesgo_aterogenico}}" class="form-control" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2"> RIESGO ATEROESCLEROSIS : </p>
+                                    <input type="type" name="riesgo_ateroesclerosis"
+                                        value="{{plipidico.riesgo_ateroesclerosis}}" class="form-control" autofocus>
+                                </div>
+                                 <div class="form-group" >
+                                <button class="btn btn-success" >
+                                    Actualizar Registro
+                                </button>
+                            </div>
+                            </div>
+                              
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>

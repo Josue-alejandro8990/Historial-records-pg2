@@ -1,0 +1,203 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-12 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <a class="btn-return" href="/profile/perfil/{{paciente.id_paciente}}">
+                        <i class="fas fa-remove icon" style="color-white"></i></a>
+                    <br>
+                    <h3>Creacion De Perfil Renal Del Paciente ID:{{paciente.id_paciente}}</h3>
+                </div>
+                <form action="/newinfo/newprenal/{{paciente.id_paciente}}" method="POST">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <p class="p-nombres">Fecha Del Registro : </p>
+                                    <input class="form-control" type="date" name="fecha" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres">ASPECTO : </p>
+                                    <select name="aspecto" class="form-control" autofocus>
+                                        <option value="null">
+                                            <selected>Seleccione un valor</selected>
+                                        </option>
+                                        <option value="TRASNPARENTE">TRASNPARENTE</option>
+                                        <option value="LIGERAMENTE TURBIA">LIGERAMENTE TURBIA</option>
+                                        <option value="TURBIA">TURBIA</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres">SEDIMIENTO : </p>
+                                    <select name="sedimiento" class="form-control" autofocus>
+                                        <option value="null">
+                                            <selected>Seleccione un valor</selected>
+                                        </option>
+                                        <option value="ABUNDANTE">ABUNDANTE</option>
+                                        <option value="ESCASO">ESCASO</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres">PROTEINAS : </p>
+                                    <select name="proteinas" class="form-control" autofocus>
+                                        <option value="null">
+                                            <selected>Seleccione un valor</selected>
+                                        </option>
+                                        <option value="POSITIVA">POSITIVA</option>
+                                        <option value="NEGATIVA">NEGATIVA</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres">UROBILINOGENO : </p>
+                                    <input type="type" name="urobilinogeno" placeholder="Ingrese un valor"
+                                        class="form-control" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres">NITRITOS : </p>
+                                    <select name="nitritos" class="form-control" autofocus>
+                                        <option value="null">
+                                            <selected>Seleccione un valor</selected>
+                                        </option>
+                                        <option value="POSITIVA">POSITIVA</option>
+                                        <option value="NEGATIVA">NEGATIVA</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres">LEUCOCITOS : </p>
+                                    <input type="type" name="leucocitos" placeholder="Ingrese un valor"
+                                        class="form-control" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres">EPITELIO : </p>
+                                    <select name="epitelio" class="form-control" autofocus>
+                                        <option value="null">
+                                            <selected>Seleccione un valor</selected>
+                                        </option>
+                                        <option value="CANTIDAD BAJA">CANTIDAD BAJA</option>
+                                        <option value="CANTIDAD REGULAR">CANTIDAD REGULAR</option>
+                                        <option value="CANTIDAD EXCESIVA">CANTIDAD EXCESIVA</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres">ERITROCITOS :</p>
+                                    <select name="eritrocitos" class="form-control" autofocus>
+                                        <option value="null">
+                                            <selected>Seleccione un valor</selected>
+                                        </option>
+                                        <option value="EVENTUALES">EVENTUALES</option>
+                                        <option value="N/A">N/A</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres">CILINDROS :</p>
+                                    <select name="cilindros" class="form-control" autofocus>
+                                        <option value="null">
+                                            <selected>Seleccione un valor</selected>
+                                        </option>
+                                        <option value="NO SE OBSERVARON">NO SE OBSERVARON</option>
+                                        <option value="SI SE OBERVARON">SI SE OBERVARON</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <p class="p-nombres">COLOR : </p>
+                                    <select name="color" class="form-control" autofocus>
+                                        <option value="null">
+                                            <selected>Seleccione un valor</selected>
+                                        </option>
+                                        <option value="CLARA">CLARA</option>
+                                        <option value="AMARILLA">AMARILLA</option>
+                                        <option value="AMBAR">AMBAR</option>
+                                        <option value="ROJA">ROJA</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres">DENSIDAD : </p>
+                                    <input type="type" name="densidad" placeholder="Ingrese un valor"
+                                        class="form-control" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres">GLUCOSA : </p>
+                                    <select name="glucosa" class="form-control" autofocus>
+                                        <option value="null">
+                                            <selected>Seleccione un valor</selected>
+                                        </option>
+                                        <option value="POSITIVA">POSITIVA</option>
+                                        <option value="NEGATIVA">NEGATIVA</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres">CETONAS : </p>
+                                    <input type="type" name="cetonas" placeholder="Ingrese un valor"
+                                        class="form-control" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres">BILIRRUBINA : </p>
+                                    <input type="type" name="bilirrubina" placeholder="Ingrese un valor"
+                                        class="form-control" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres">SANGRE : </p>
+                                    <select name="sangre" class="form-control" autofocus>
+                                        <option value="null">
+                                            <selected>Seleccione un valor</selected>
+                                        </option>
+                                        <option value="POSITIVA">POSITIVA</option>
+                                        <option value="NEGATIVA">NEGATIVA</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres">PH : </p>
+                                    <input type="type" name="ph" placeholder="Ingrese un valor" class="form-control"
+                                        autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres">BACTERIAS :</p>
+                                    <select name="bacterias" class="form-control" autofocus>
+                                        <option value="null">
+                                            <selected>Seleccione un valor</selected>
+                                        </option>
+                                        <option value="ESCASAS">ESCASAS</option>
+                                        <option value="NORMALES">NORMALES</option>
+                                        <option value="EXCESIVAS">EXCESIVAS</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres">CRISTALES :</p>
+                                    <input type="type" name="cristales" placeholder="Ingrese un valor"
+                                        class="form-control" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres">MUCOSA :</p>
+                                    <select name="mucosa" class="form-control" autofocus>
+                                        <option value="null">
+                                            <selected>Seleccione un valor</selected>
+                                        </option>
+                                        <option value="ESCASAS">ESCASAS</option>
+                                        <option value="ABUNDANTES">ABUNDANTES</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres">LEVADURAS :</p>
+                                    <select name="levaduras" class="form-control" autofocus>
+                                        <option value="null">
+                                            <selected>Seleccione un valor</selected>
+                                        </option>
+                                        <option value="POSITIVA">POSITIVA</option>
+                                        <option value="NEGATIVA">NEGATIVA</option>
+                                    </select>
+                                </div>
+                            </div>
+                    
+                        </div>
+                                <div class="form-group">
+                                <button class="btn btn-success btn-block">
+                                    Crear Registro
+                                </button>
+                            </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>

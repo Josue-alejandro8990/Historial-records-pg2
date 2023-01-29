@@ -1,0 +1,90 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-12 mx-auto">
+            <div class="card">
+                <div class="card-header">
+                    <div class="form-group">
+                        <a class="btn-return" href="/profile/perfil/{{paciente.id_paciente}}">
+                            <i class="fas fa-remove icon" style="color-white"></i></a>
+                    </div>
+                    <br>
+                    <h3>Actualización De Perfil Del Paciente : {{paciente.id_paciente}}</h3>
+                </div>
+                <form action="/info/edit_perfilpaciente/{{paciente.id_paciente}}" method="POST">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="form-group">
+                                        <p class="p-nombres2"> Nombres :</p>
+                                        <input type="type" name="nombres" value="{{paciente.nombres}}"
+                                            class="form-control" autofocus>
+                                    </div>
+                                    <div class="form-group">
+                                        <p class="p-nombres2"> Apellidos :</p>
+                                        <input type="type" name="apellidos" value="{{paciente.apellidos}}"
+                                            class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <p class="p-nombres2">Fecha de Nacimiento :</p>
+                                        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento"
+                                            value="{{formatDate paciente.fecha_nacimiento}}" class="form-control" autofocus>
+                                    </div>
+                                    <div class="form-group">
+                                        <p class="p-nombres2">Edad :</p>
+                                        <input type="type" id="edad" name="edad" placeholder="Ingresa tu edad"
+                                            class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <p class="p-nombres2">Numero de DPI :</p>
+                                        <input type="type" name="dpi" value="{{paciente.dpi}}" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="form-group">
+                                        <p class="p-nombres2">Telefono :</p>
+                                        <input type="type" name="telefono" value="{{paciente.telefono}}"
+                                            class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <p class="p-nombres2">Dirección :</p>
+                                        <input type="type" name="direccion" value="{{paciente.direccion}}"
+                                            class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <p class="p-nombres2">Estado Civil :</p>
+                                        <select name="estado_civil" class="form-control">
+                                            <option value="{{paciente.estado_civil}}">
+                                                <selected>{{paciente.estado_civil}}</selected>
+                                            </option>
+                                            <option value="Soltero">Soltero</option>
+                                            <option value="Casado">Casado</option>
+                                            <option value="Divorciado">Divorciado</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <p class="p-nombres2">Genero :</p>
+                                        <select name="genero" class="form-control">
+                                            <option value="{{paciente.genero}}">
+                                                <selected>{{paciente.genero}}</selected>
+                                            </option>
+                                            <option value="Masculino">Masculino</option>
+                                            <option value="Femenino">Femenino</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <button class="btn btn-success btn-block">
+                                            Actualizar Perfil
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

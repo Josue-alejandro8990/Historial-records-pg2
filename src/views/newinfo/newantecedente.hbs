@@ -1,0 +1,91 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-7 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <a class="btn-return" href="/profile/perfil/{{paciente.id_paciente}}">
+                        <i class="fas fa-remove icon" style="color-white"></i></a>
+                    <br>
+                    <h3>Creación De Antecedentes Del Paciente ID:{{paciente.id_paciente}}</h3>
+                </div>
+                <form action="/newinfo/newantecedente/{{paciente.id_paciente}}" method="POST">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <p class="p-nombres2">Fecha Del Registro : </p>
+                                    <input class="form-control" type="date" name="fecha" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2">CANCER :</p>
+                                    <select name="cancer" class="form-control">
+                                        <option value="null">
+                                            <selected>Seleccione un valor</selected>
+                                        </option>
+                                        <option value="SI">SI</option>
+                                        <option value="NO">NO</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2">VIH :</p>
+                                    <select name="vih" class="form-control">
+                                        <option value="null">
+                                            <selected>Seleccione un valor</selected>
+                                        </option>
+                                        <option value="SI">SI</option>
+                                        <option value="NO">NO</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2">ASMA :</p>
+                                    <select name="asma" class="form-control">
+                                        <option value="null">
+                                            <selected>Seleccione un valor</selected>
+                                        </option>
+                                        <option value="SI">SI</option>
+                                        <option value="NO">NO</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2">CEGUERA :</p>
+                                    <select name="ceguera" class="form-control">
+                                        <option value="null">
+                                            <selected>Seleccione un valor</selected>
+                                        </option>
+                                        <option value="SI">SI</option>
+                                        <option value="NO">NO</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2">ANSIEDAD :</p>
+                                    <select name="ansiedad" class="form-control">
+                                        <option value="null">
+                                            <selected>Seleccione un valor</selected>
+                                        </option>
+                                        <option value="SI">SI</option>
+                                        <option value="NO">NO</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2">DEPRESION :</p>
+                                    <select name="depresion" class="form-control">
+                                        <option value="null">
+                                            <selected>Seleccione un valor</selected>
+                                        </option>
+                                        <option value="SI">SI</option>
+                                        <option value="NO">NO</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-success btn-block">
+                                        Crear Registro
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

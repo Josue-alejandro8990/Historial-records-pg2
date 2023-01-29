@@ -1,0 +1,255 @@
+body {
+    background: #f5f6fa;
+    font-family: 'Oswald', sans-serif;
+    background: url('/img/background.jpg');
+    background-position: top;
+    background-repeat: repeat;
+    background-size: cover;
+    overflow: scroll;
+}
+
+.index {
+    width: 100vw;
+    height: 100vh;
+}
+
+.navbar {
+    background: orange !important;
+}
+
+.nav-link {
+    color: #fff !important;
+}
+
+.masthead {
+  color: black;
+  -webkit-text-stroke:1px white;
+    min-height: 30rem;
+    width: 100%;
+    height: 100%;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    background: url('/img/background.jpeg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.masthead h1 {
+    color: black;
+    -webkit-text-stroke:3px white;
+    font-size: 4rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+  @media (min-width: 992px) {
+    .masthead {
+      height: 100vh;
+    }
+    .masthead h1 {
+      font-size: 5.5rem;
+    }
+  }
+
+  .card-header{
+    background-color: skyblue;
+  }
+
+  .body_paciente{
+    border-radius: 3px;
+    margin-top: 40px;
+    margin-right: 25px;
+    margin-left: 25px;
+    height: 500px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr ;
+    grid-template-areas: 
+    "aperfil ahistorial ahistorial ahistorial";
+
+  }
+.container_perfil{
+  border-radius: 15px;
+  display: grid;
+  margin-right: 10px;
+  grid-area: aperfil;
+  background-color: white;
+  position: relative;
+  height: min-content;
+}
+.container_historial{
+  border-radius: 15px;
+  display: grid;
+  width: 2fr;
+  height: min-content;
+  grid-area: ahistorial;
+  background-color: white;
+  position: relative;
+}
+.container-foto{
+  border-radius: 20px;
+  background-color: skyblue;
+  margin-bottom: 20px;
+  width:300px;
+}
+.container-datos{
+  border-radius: 20px;
+  background-color: skyblue;
+  width: 300px;
+}
+.container-antecedentes{
+  border-radius: 20px;
+  position: relative;
+  background-color: skyblue;
+  height: min-content;
+  width: 400px;
+  left: 300px;
+  text-align: center;
+}
+.container-laboratorios{
+  border-radius: 20px;
+  position: relative;
+  background-color: skyblue;
+  text-align: left;
+  display: grid;
+  margin-bottom: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows:  1fr, 1fr;
+  grid-template-areas: 
+  "aencabezado aencabezado aencabezado"
+  "alaboratorio alaboratorio alaboratorio";
+}
+
+.container-crud{
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-template-rows:1fr;
+  grid-template-areas: 
+  "alaboratorio alaboratorio";
+
+}
+.nombres{
+  margin-left: 15px;
+}
+.datos{
+display: grid;
+margin-right: 30px;
+grid-area: adatos;
+}
+.laboratorio{
+  display: grid;
+  grid-area: alaboratorio;
+}
+
+.titulo{
+height: 100px;
+}
+.titulo2{
+  display:grid;
+  grid-area: atitulo2;
+  height: min-content;
+  position: relative;
+  }
+.subtitulo{
+  display: flex;
+margin-left: 125px;
+}
+.p-subtitulo{
+  margin-left: 200px;
+}
+.p-datos{
+  display: flex;
+  text-align: left;
+  margin-left: 5px;
+}
+.form-group{
+  margin-left: 20px;
+  margin-right: 20px;
+  display: flex;
+}
+.p-datosnombres{
+ 
+  margin-left:20px;
+}
+.p-nombres{
+  width: 100px;
+  text-align: left;
+}
+.p-nombres2{
+  width: 200px;
+  text-align: left;
+}
+.p-datosmedicos{
+  width: 200px;
+}
+.p-datosreferencias{
+  margin-left:10px;
+}
+
+.form-group2{
+  right: 0px;
+  display: flex;
+}
+.panel-title{
+ background-color: green;
+ width: 400px;
+ position: relative;
+ left: 300px;
+ text-align: center;
+ border-radius:15px;
+}
+.a-estilo{
+  color: white;
+}
+h3{
+  text-align: center;
+}
+.controles{
+  width: 500px;
+  margin-right: 180px;
+  text-align: center;
+}
+.encabezado{
+  display: grid;
+  grid-area: aencabezado;
+}
+.from-input{
+margin-top: 50px;
+}
+
+.separador{
+  background-color: white;
+  display: flex;
+  height: 20px;
+}
+
+.perfil{
+  height: 150px;
+  width: 150px;
+  border-radius: 100px;
+  background: url('/img/profiledefault.jpg');
+  background-size: cover;
+  margin-left: 40px;
+
+}
+
+.panel-title{
+  position: relative;
+}
+.imgcarousel{
+  width: 1200px;
+  height: 420px;
+  margin-left: 70px;
+  margin-top: 40px;
+  border-radius: 50px;
+}
+
+.card{
+  border-radius: 20px;
+}
+.card-body{
+  border-radius: 20px;
+}
+.html2canvas-container { width: 1300px !important; }

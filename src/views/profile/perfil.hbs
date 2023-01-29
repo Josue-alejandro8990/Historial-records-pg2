@@ -1,0 +1,655 @@
+<div class="buscar">
+  <form action="/profile/search" method="POST">
+    <input type="text" name="id" placeholder="Ingresa una busqueda" class="buscar-input" autofocus>
+    <button class="btn-search ">
+      <i class="fas fa-search icon"></i>
+    </button>
+  </form>
+</div>
+<div class="body_paciente">
+  <div class="container_perfil p-4" id="capture6">
+    <div class="container-foto">
+      {{#if paciente}}
+      {{#each paciente}}
+      <div class="form-group2">
+          <a class="btn-editperfil" href="/info/edit_perfilfoto/{{id_paciente}}">
+            <i class="fas fa-pencil icon"></i></a>
+      </div>
+      <div class="form-group">
+        <img src="{{perfil}}" alt="" class="perfil">
+      </div>
+      {{/each}}
+      {{else}}
+      <img src="/img/profiledefault.png" alt="" class="perfil">
+      {{/if}}
+    </div>
+    <div class="container-datos">
+      {{#if paciente}}
+      <div class="card-body">
+        <div class="row">
+          {{#each paciente}}
+          <div class="form-group2">
+              <a class="btn-editperfil2" href="/info/edit_perfilpaciente/{{id_paciente}}">
+                <i class="fas fa-pencil icon"></i></a>
+              <a class="btn-pdf2" onclick="makepdf6({{id_paciente}})">
+                <i class="far fa-file-pdf"></i></a>
+          </div>
+          <div class="form-group">
+            <p class="p-nombres">Nombres :</p>
+            <p class="p-nombres2">{{nombres}} </p>
+          </div>
+          <div class="form-group">
+            <p class="p-nombres">Apellidos : </p>
+            <p class="p-nombres2">{{apellidos}}</p>
+          </div>
+          <div class="form-group">
+            <p class="p-nombres">Fecha de nacimiento : </p>
+            <p class="p-nombres2">{{formatDate fecha_nacimiento}} </p>
+          </div>
+          <div class="form-group">
+            <p class="p-nombres">Edad : </p>
+            <p class="p-nombres2">{{edad}} </p>
+          </div>
+          <div class="form-group">
+            <p class="p-nombres">DPI : </p>
+            <p class="p-nombres2">{{dpi}} </p>
+          </div>
+          <div class="form-group">
+            <p class="p-nombres">Telefono : </p>
+            <p class="p-nombres2">{{telefono}} </p>
+          </div>
+          <div class="form-group">
+            <p class="p-nombres">Dirección : </p>
+            <p class="p-nombres2">{{direccion}} </p>
+          </div>
+          <div class="form-group">
+            <p class="p-nombres">Estado Civil : </p>
+            <p class="p-nombres2">{{estado_civil}} </p>
+          </div>
+          <div class="form-group">
+            <p class="p-nombres">Genero : </p>
+            <p class="p-nombres2">{{genero}} </p>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+      {{else}}
+      <h3>Aun no se ha realizado una busqueda de historial medico!!!</h3>
+      {{/if}}
+    </div>
+  </div>
+
+  <div class="container_historial p-4">
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingOne">
+          <h4 class="panel-title">
+            <a class="a-estilo" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
+              aria-expanded="true" aria-controls="collapseOne">
+              Antecedentes Familiares
+            </a>
+          </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            <div class="container-laboratorios" name="antecedentes" id="capture">
+              {{#if antecedentes}}
+              <div class="encabezado">
+                <h3>Antecedentes Familiares</h3>
+              </div>
+              <div class="laboratorio">
+                {{#each antecedentes}}
+                <div class="separador">
+                </div>
+                <div class="form-group">
+                  <h3 class="controles">Fecha : {{formatDate fecha}}</h3>
+                    <a class="btn-edit" href="/info/edit_antecedentes/{{id_paciente}}">
+                      <i class="fas fa-pencil icon"></i></a>
+                    <a class="btn-delete" href="/removeinfo/removeantecedente/{{id_antecedente}}/{{id_paciente}}">
+                      <i class="	far fa-trash-alt"></i></a>
+                    <a class="btn-new" href="/newinfo/newantecedente/{{id_paciente}}">
+                      <i class="fas fa-plus icon" style="color-white"></i></a>
+                    <a class="btn-pdf2" onclick="makepdf({{id_paciente}})">
+                      <i class="far fa-file-pdf"></i></a>
+                </div>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="form-group">
+                      <p class="p-nombres2">CANCER:</p>
+                      <p class="p-nombres2">{{cancer}}</p>
+                    </div>
+                    <div class="form-group">
+                      <p class="p-nombres2">VIH:</p>
+                      <p class="p-nombres2">{{vih}}</p>
+                    </div>
+                    <div class="form-group">
+                      <p class="p-nombres2">ASMA: </p>
+                      <p class="p-nombres2">{{asma}}</p>
+                    </div>
+                    <div class="form-group">
+                      <p class="p-nombres2">CEGUEREA: </p>
+                      <p class="p-nombres2">{{ceguera}}</p>
+                    </div>
+                    <div class="form-group">
+                      <p class="p-nombres2">ANSIEDAD: </p>
+                      <p class="p-nombres2">{{ansiedad}}</p>
+                    </div>
+                    <div class="form-group">
+                      <p class="p-nombres2">DEPRESEION: </p>
+                      <p class="p-nombres2">{{depresion}}</p>
+                    </div>
+                  </div>
+                </div>
+                {{/each}}
+              </div>
+              {{else}}
+              <div class="titulo">
+                <h3>No se le ha practicado ningun laboratorio al paciente!!</h3>
+              </div>
+              <div class="form-group">
+                {{#each paciente}}
+                  <a class="btn-edit" href="/info/edit_antecedentes/{{id_paciente}}">
+                    <i class="fas fa-pencil icon"></i></a>
+                  <a class="btn-delete" href="/removeinfo/removeantecedente/{{id_antecedente}}/{{id_paciente}}">
+                    <i class="	far fa-trash-alt"></i></a>
+                  <a class="btn-new" href="/newinfo/newantecedente/{{id_paciente}}">
+                    <i class="fas fa-plus icon" style="color-white"></i></a>
+                  <a class="btn-pdf2" onclick="makepdf({{id_paciente}})">
+                    <i class="far fa-file-pdf"></i></a>
+                {{/each}}
+              </div>
+              {{/if}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingTwo">
+          <h4 class="panel-title">
+            <a class="a-estilo" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"
+              aria-expanded="false" aria-controls="collapseTwo">
+              Laboratorios Medicos
+            </a>
+          </h4>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            <div class="container-laboratorios" name="hemograma_completo" id="capture2">
+              {{#if hemograma}}
+              <div class="encabezado">
+                <h3>Hemograma completo</h3>
+              </div>
+              <div class="laboratorio">
+                {{#each hemograma}}
+                <div class="separador">
+                </div>
+                <div class="form-group">
+                  <h3 class="controles">Fecha : {{formatDate fecha}}</h3>
+                    <a class="btn-edit" href="/info/edit_hemograma/{{id_paciente}}">
+                      <i class="fas fa-pencil icon"></i></a>
+                    <a class="btn-delete" href="/removeinfo/removehemograma/{{id_hemograma}}/{{id_paciente}}">
+                      <i class="	far fa-trash-alt"></i></a>
+                    <a class="btn-new" href="/newinfo/newhemograma/{{id_paciente}}">
+                      <i class="fas fa-plus icon" style="color-white"></i></a>
+                    <a class="btn-pdf2" onclick="makepdf2({{id_paciente}})">
+                      <i class="far fa-file-pdf"></i></a>
+                </div>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="form-group">
+                      <p class="p-nombres2"> PARAMETROS </p>
+                      <p class="p-nombres2"> RESULTADO </p>
+                      <p class="p-nombres2"> VALOR REFENCIAL</p>
+                    </div>
+                    <div class="form-group">
+                      <p class="p-nombres2">SERIE BLANCA---</p>
+                      <p class="p-nombres2">---------</p>
+                      <p class="p-nombres2">-------------</p>
+                    </div>
+                    <div class="form-group">
+                      <p class="p-nombres2">Recuento de Globulos Blancos : </p>
+                      <p class="p-nombres2">{{r_g_blancos}} mm3 </p>
+                      <p class="p-nombres2"> 4,000-10,000/mm3</p>
+                    </div>
+                    <div class="form-group">
+                      <p class="p-nombres2">Neutrofilos : </p>
+                      <p class="p-nombres2">{{neutrofilos}} % </p>
+                      <p class="p-nombres2">40-60%</p>
+                    </div>
+                    <div class="form-group">
+                      <p class="p-nombres2">Eosinofilos : </p>
+                      <p class="p-nombres2">{{eosinofilos}} % </p>
+                      <p class="p-nombres2">1-4%</p>
+                    </div>
+                    <div class="form-group">
+                      <p class="p-nombres2">Basofilos : </p>
+                      <p class="p-nombres2">{{basofilos}} % </p>
+                      <p class="p-nombres2">0-2%</p>
+                    </div>
+                    <div class="form-group">
+                      <p class="p-nombres2">Linfocitos : </p>
+                      <p class="p-nombres2">{{linfocitos}} % </p>
+                      <p class="p-nombres2">20-45%</p>
+                    </div>
+                    <div class="form-group">
+                      <p class="p-nombres2">Monocitos : </p>
+                      <p class="p-nombres2">{{monocitos}} % </p>
+                      <p class="p-nombres2">0-8%</p>
+                    </div>
+                    <div class="form-group">
+                      <p class="p-nombres2">Cayados : </p>
+                      <p class="p-nombres2">{{cayados}} % </p>
+                      <p class="p-nombres2">1-3%</p>
+                    </div>
+                    <div class="form-group">
+                      <p class="p-nombres2">SERIE ROJA---</p>
+                      <p class="p-nombres2">---------</p>
+                      <p class="p-nombres2">-------------</p>
+                    </div>
+                    <div class="form-group">
+                      <p class="p-nombres2">Recuento de Globulos Rojos : </p>
+                      <p class="p-nombres2">{{r_g_rojos}} millones/mm3 </p>
+                      <p class="p-nombres2"> 3.5-5.5millones/mm3</p>
+                    </div>
+                    <div class="form-group">
+                      <p class="p-nombres2">Hemoglobina : </p>
+                      <p class="p-nombres2">{{hemoglobina}} g/dL </p>
+                      <p class="p-nombres2">11-15g/dL<br>
+                        36-48%</p>
+                    </div>
+                    <div class="form-group">
+                      <p class="p-nombres2">Hematocrito : </p>
+                      <p class="p-nombres2">{{hematocrito}} % </p>
+                      <p class="p-nombres2">80-100fL</p>
+                    </div>
+                    <div class="form-group">
+                      <p class="p-nombres2">Volumen Corpuscular Media : </p>
+                      <p class="p-nombres2">{{v_corupuscular_m}} fL </p>
+                      <p class="p-nombres2"> 26-34pg</p>
+                    </div>
+                    <div class="form-group">
+                      <p class="p-nombres2">Hemoglobina Corpuscular Media : </p>
+                      <p class="p-nombres2">{{hemoglobina_c_m}} pg </p>
+                      <p class="p-nombres2">32-36g/dL</p>
+                    </div>
+                    <div class="form-group">
+                      <p class="p-nombres2">Concentración de Hemoglovina Corpuscular Media : </p>
+                      <p class="p-nombres2">{{concentracion_hcm}} g/dL </p>
+                    </div>
+                    <div class="form-group">
+                      <p class="p-nombres2">SERIE PLAQUETARIA---</p>
+                      <p class="p-nombres2">--------</p>
+                      <p class="p-nombres2">-------------</p>
+                    </div>
+                    <div class="form-group">
+                      <p class="p-nombres2">Recuento de Plaquetas : </p>
+                      <p class="p-nombres2">{{r_plaquetas}} /mm3 </p>
+                      <p class="p-nombres2">100,000-300,000/mm3</p>
+                    </div>
+                    <div class="form-group">
+                      <p class="p-nombres2">ERITROSEDIMENTACION</p>
+                      <p class="p-nombres2">-----------------</p>
+                      <p class="p-nombres2">-------------</p>
+                    </div>
+                    <div class="form-group">
+                      <p class="p-nombres2">Velocidad de Eritrosedimentación :</p>
+                      <p class="p-nombres2">{{velocidad_eritrodimentacion}} mm/Hora </p>
+                      <p class="p-nombres2">Hombres: 0-6mm/Hora <br>Mujeres: 0-15mm/Hora</p>
+                    </div>
+                  </div>
+                </div>
+                {{/each}}
+              </div>
+              {{else}}
+              <div class="titulo">
+                <h3>No se le ha practicado ningun laboratorio al paciente!!</h3>
+              </div>
+              <div class="form-group">
+                {{#each paciente}}
+                  <a class="btn-edit" href="/info/edit_hemograma/{{id_paciente}}">
+                    <i class="fas fa-pencil icon"></i></a>
+                  <a class="btn-delete" href="/removeinfo/removehemograma/{{id_hemograma}}/{{id_paciente}}">
+                    <i class="	far fa-trash-alt"></i></a>
+                  <a class="btn-new" href="/newinfo/newhemograma/{{id_paciente}}">
+                    <i class="fas fa-plus icon" style="color-white"></i></a>
+                  <a class="btn-pdf2" onclick="makepdf2({{id_paciente}})">
+                    <i class="far fa-file-pdf"></i></a>
+                {{/each}}
+              </div>
+              {{/if}}
+            </div>
+            <div class="container-laboratorios" name="perfil_renal" id="capture3">
+              {{#if p_renal}}
+              <div class="encabezado">
+                <h3>Perfil Renal</h3>
+              </div>
+              <div class="laboratorio">
+                {{#each p_renal}}
+                <div class="separador">
+                </div>
+                <div class="form-group">
+                  <h3 class="controles">Fecha : {{formatDate fecha}}</h3>
+                    <a class="btn-edit" href="/info/edit_prenal/{{id_paciente}}">
+                      <i class="fas fa-pencil icon"></i></a>
+                    <a class="btn-delete" href="/removeinfo/removeprenal/{{id_perfilrenal}}/{{id_paciente}}">
+                      <i class="	far fa-trash-alt"></i></a>
+                    <a class="btn-new" href="/newinfo/newprenal/{{id_paciente}}">
+                      <i class="fas fa-plus icon" style="color-white"></i></a>
+                    <a class="btn-pdf2" onclick="makepdf3({{id_paciente}})">
+                      <i class="far fa-file-pdf"></i></a>
+                </div>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="form-group">
+                      <p class="p-nombres2"> TIPOS DE EXAMENES</p>
+                      <p class="p-nombres2"> RESULTADO </p>
+                      <p class="p-nombres2"> VALOR REFENCIAL</p>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <p class="p-nombres2">EXAMEN MACROSCOPICO---</p>
+                    <p class="p-nombres2">---------</p>
+                    <p class="p-nombres2">-------------</p>
+                  </div>
+                  <div class="form-group">
+                    <p class="p-nombres2">COLOR : </p>
+                    <p class="p-nombres2">{{color}}</p>
+                  </div>
+                  <div class="form-group">
+                    <p class="p-nombres2">ASPECTO : </p>
+                    <p class="p-nombres2">{{aspecto}}</p>
+                  </div>
+                  <div class="form-group">
+                    <p class="p-nombres2">DENSIDAD : </p>
+                    <p class="p-nombres2">{{densidad}}</p>
+                  </div>
+                  <div class="form-group">
+                    <p class="p-nombres2">SEDIMIENTO : </p>
+                    <p class="p-nombres2">{{sedimiento}}</p>
+                  </div>
+                  <div class="form-group">
+                    <p class="p-nombres2">EXAMEN QUIMICO---</p>
+                    <p class="p-nombres2">--------</p>
+                    <p class="p-nombres2">-------------</p>
+                  </div>
+                  <div class="form-group">
+                    <p class="p-nombres2">GLUCOSA : </p>
+                    <p class="p-nombres2">{{glucosa}} mg/dl</p>
+                    <p class="p-datosreferencias">mg/dl</p>
+                  </div>
+                  <div class="form-group">
+                    <p class="p-nombres2">PROTEINAS : </p>
+                    <p class="p-nombres2">{{proteinas}} mg/dl</p>
+                    <p class="p-datosreferencias">mg/dl</p>
+                  </div>
+                  <div class="form-group">
+                    <p class="p-nombres2">CETONAS : </p>
+                    <p class="p-nombres2">{{cetonas}}mg/dl</p>
+                    <p class="p-datosreferencias">mg/dl</p>
+                  </div>
+                  <div class="form-group">
+                    <p class="p-nombres2">UROBILINOGENO : </p>
+                    <p class="p-nombres2">{{urobilinogeno}} mg/dl</p>
+                    <p class="p-datosreferencias">mg/dl</p>
+                  </div>
+                  <div class="form-group">
+                    <p class="p-nombres2">BILIRRUBINA : </p>
+                    <p class="p-nombres2">{{bilirrubina}} mg/dl </p>
+                    <p class="p-datosreferencias">mg/dl</p>
+                  </div>
+                  <div class="form-group">
+                    <p class="p-nombres2">NITRITOS : </p>
+                    <p class="p-nombres2">{{nitritos}}</p>
+                  </div>
+                  <div class="form-group">
+                    <p class="p-nombres2">SANGRE : </p>
+                    <p class="p-nombres2">{{sangre}}</p>
+                  </div>
+                  <div class="form-group">
+                    <p class="p-nombres2">LEUCOCITOS : </p>
+                    <p class="p-nombres2">{{leucocitos}}Cs/ul</p>
+                  </div>
+                  <div class="form-group">
+                    <p class="p-nombres2">PH : </p>
+                    <p class="p-nombres2">{{ph}}</p>
+                  </div>
+
+                  <div class="form-group">
+                    <p class="p-nombres2">EXAMEN MICROSCOPICO---</p>
+                    <p class="p-nombres2">---------------</p>
+                    <p class="p-nombres2">-------------</p>
+                  </div>
+                  <div class="form-group">
+                    <p class="p-nombres2">EPITELIO : </p>
+                    <p class="p-nombres2">{{epitelio}}</p>
+                  </div>
+                  <div class="form-group">
+                    <p class="p-nombres2">BACTERIAS :</p>
+                    <p class="p-nombres2">{{bacterias}}</p>
+                  </div>
+                  <div class="form-group">
+                    <p class="p-nombres2">ERITROCITOS :</p>
+                    <p class="p-nombres2">{{eritrocitos}}</p>
+                  </div>
+                  <div class="form-group">
+                    <p class="p-nombres2">CRISTALES :</p>
+                    <p class="p-nombres2">{{cristales}}</p>
+                  </div>
+                  <div class="form-group">
+                    <p class="p-nombres2">CILINDROS :</p>
+                    <p class="p-nombres2">{{cilindros}}</p>
+                  </div>
+
+                  <div class="form-group">
+                    <p class="p-nombres2">MUCOSA :</p>
+                    <p class="p-nombres2">{{mucosa}}</p>
+                  </div>
+                  <div class="form-group">
+                    <p class="p-nombres2">LEVADURAS :</p>
+                    <p class="p-nombres2">{{levaduras}} mm/Hora
+                  </div>
+                </div>
+                {{/each}}
+              </div>
+              {{else}}
+              <div class="titulo">
+                <h3>No se le ha practicado ningun laboratorio al paciente!!</h3>
+              </div>
+              <div class="form-group">
+                {{#each paciente}}
+                  <a class="btn-edit" href="/info/edit_prenal/{{id_paciente}}">
+                    <i class="fas fa-pencil icon"></i></a>
+                  <a class="btn-delete" href="/removeinfo/removeprenal/{{id_perfilrenal}}/{{id_paciente}}">
+                    <i class="	far fa-trash-alt"></i></a>
+                  <a class="btn-new" href="/newinfo/newprenal/{{id_paciente}}">
+                    <i class="fas fa-plus icon" style="color-white"></i></a>
+                  <a class="btn-pdf2" onclick="makepdf3({{id_paciente}})">
+                    <i class="far fa-file-pdf"></i></a>
+                {{/each}}
+              </div>
+              {{/if}}
+            </div>
+            <div class="container-laboratorios" name="perfil_lipidico" id="capture4">
+              {{#if p_lipidico}}
+              <div class="encabezado">
+                <h3>Perfil Lipidico</h3>
+              </div>
+              <div class="laboratorio">
+                {{#each p_lipidico}}
+                <div class="separador">
+                </div>
+                <div class="form-group">
+                  <h3 class="controles">Fecha : {{formatDate fecha}}</h3>
+                    <a class="btn-edit" href="/info/edit_plipidico/{{id_paciente}}">
+                      <i class="fas fa-pencil icon"></i></a>
+                    <a class="btn-delete" href="/removeinfo/removeplipidico/{{id_perfillipidico}}/{{id_paciente}}">
+                      <i class="	far fa-trash-alt"></i></a>
+                    <a class="btn-new" href="/newinfo/newplipidico/{{id_paciente}}">
+                      <i class="fas fa-plus icon" style="color-white"></i></a>
+                    <a class="btn-pdf2" onclick="makepdf4({{id_paciente}})">
+                      <i class="far fa-file-pdf"></i></a>
+                </div>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="form-group ">
+                      <p class="p-nombres2">PARAMETROS</p>
+                      <p class="p-datosmedicos"> RESULTADO </p>
+                      <p class="p-datosreferencias"> VALOR REFENCIAL</p>
+                    </div>
+                    <div class="form-group">
+                      <p class="p-nombres2">COLESTEROL TOTAL : </p>
+                      <p class="p-datosmedicos">{{c_total}} mg/dL </p>
+                      <p class="p-datosreferencias">140/200mg/dL</p>
+                    </div>
+                    <div class="form-group">
+                      <p class="p-nombres2">COLESTEROL HDL : </p>
+                      <p class="p-datosmedicos">{{c_hdl}} mg/dL </p>
+                      <p class="p-datosreferencias">40/60mg/dL</p>
+                    </div>
+                    <div class="form-group">
+                      <p class="p-nombres2">COLESTEROL LDL : </p>
+                      <p class="p-datosmedicos">{{c_ldl}} mg/dL </p>
+                      <p class="p-datosreferencias">MENOR O IGUAL A 130mg/dL</p>
+                    </div>
+                    <div class="form-group">
+                      <p class="p-nombres2">COLESTEROL VLDL : </p>
+                      <p class="p-datosmedicos">{{c_vldl}} mg/dL </p>
+                      <p class="p-datosreferencias">MENOR O IGUAL A 30mg/dL</p>
+                    </div>
+                    <div class="form-group">
+                      <p class="p-nombres2">TRIGLICERIDOS : </p>
+                      <p class="p-datosmedicos">{{trigliceridos}} mg/dL </p>
+                      <p class="p-datosreferencias">MENOR O IGUAL A 150mg/dL</p>
+                    </div>
+                    <div class="form-group">
+                      <p class="p-nombres2">RIESGO ATEROGENICO : </p>
+                      <p class="p-datosmedicos">{{riesgo_aterogenico}} cHDL </p>
+                      <p class="p-datosreferencias">MENOR O IGUAL A 4.90 <br>
+                        ----NORMAL 4.90 <br>
+                        ----RIESGO X2 9.5 <br>
+                        ----RIESGO X3 23.3
+                      </p>
+                    </div>
+                    <div class="form-group">
+                      <p class="p-nombres2">RIESGO ATEROESCLEROSIS : </p>
+                      <p class="p-datosmedicos">{{riesgo_ateroesclerosis}} cHDL </p>
+                      <p class="p-datosreferencias">MENOR O IGUAL A 3 <br>
+                        ----AUSENCIA DE RIESGO : 1-2 <br>
+                        ----RIESGO BAJO : 2-3 <br>
+                        ----RIESGO MEDIO : 3-4 <br>
+                        ----RIESGO ALTO : MAYOR A 4</p>
+                    </div>
+                  </div>
+                </div>
+                {{/each}}
+              </div>
+              {{else}}
+              <div class="titulo">
+                <h3>No se le ha practicado ningun laboratorio al paciente!!</h3>
+              </div>
+              <div class="form-group">
+                {{#each paciente}}
+                  <a class="btn-edit" href="/info/edit_plipidico/{{id_paciente}}">
+                    <i class="fas fa-pencil icon"></i></a>
+                  <a class="btn-delete" href="/removeinfo/removeplipidico/{{id_perfillipidico}}/{{id_paciente}}">
+                    <i class="	far fa-trash-alt"></i></a>
+                  <a class="btn-new" href="/newinfo/newplipidico/{{id_paciente}}">
+                    <i class="fas fa-plus icon" style="color-white"></i></a>
+                  <a class="btn-pdf2" onclick="makepdf4({{id_paciente}})">
+                    <i class="far fa-file-pdf"></i></a>
+                {{/each}}
+              </div>
+              {{/if}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingThree">
+          <h4 class="panel-title">
+            <a class="a-estilo" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree"
+              aria-expanded="false" aria-controls="collapseThree">
+              Tratamientos
+            </a>
+          </h4>
+        </div>
+        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            <div class="container-laboratorios" id="capture5">
+              {{#if tratamientos}}
+              <div class="encabezado">
+                <h3>Tratamientos Activos</h3>
+              </div>
+              <div class="laboratorio">
+                {{#each tratamientos}}
+                <div class="separador">
+                </div>
+                <div class="form-group">
+                  <h3 class="controles">Fecha : {{formatDate fecha}}</h3>
+                    <a class="btn-edit" href="/info/edit_tratamientos/{{id_paciente}}">
+                      <i class="fas fa-pencil icon"></i></a>
+                    <a class="btn-delete" href="/removeinfo/removetratamiento/{{id_tratamiento}}/{{id_paciente}}">
+                      <i class="	far fa-trash-alt"></i></a>
+                    <a class="btn-new" href="/newinfo/newtratamiento/{{id_paciente}}">
+                      <i class="fas fa-plus icon" style="color-white"></i></a>
+                    <a class="btn-pdf2" onclick="makepdf5({{id_paciente}})">
+                      <i class="far fa-file-pdf"></i></a>
+                </div>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <P class="p-nombres2">DESCRIPCION :</P>
+                      </div>
+                      <div class="form-group">
+                        <p class="p-nombres2">MEDICAMENTO :</p>
+                      </div>
+                      <div class="form-group">
+                        <p class="p-nombres2"> DOSIS :</p>
+                      </div>
+                      <div class="form-group">
+                        <p class="p-nombres2">DURACION DEL TRATAMIENTO :</p>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <p class="p-datosmedicos">{{descripcion}}</p>
+                      </div>
+                      <div class="form-group">
+                        <p class="p-datosmedicos">{{medicamento}}</p>
+                      </div>
+                      <div class="form-group">
+                        <p class="p-datosmedicos"> {{dosis}} </p>
+                      </div>
+                      <div class="form-group">
+                        <p class="p-datosmedicos"> {{tiempo}}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {{/each}}
+              </div>
+              {{else}}
+              <div class="titulo">
+                <h3>Este paciente no tiene ningun tratamiento asignado!!</h3>
+              </div>
+              <div class="form-group">
+                {{#each paciente}}
+                <a class="btn-edit" href="/info/edit_tratamientos/{{id_paciente}}">
+                  <i class="fas fa-pencil icon"></i></a>
+                <a class="btn-delete" href="/removeinfo/removetratamiento/{{id_tratamiento}}/{{id_paciente}}">
+                  <i class="	far fa-trash-alt"></i></a>
+                <a class="btn-new" href="/newinfo/newtratamiento/{{id_paciente}}">
+                  <i class="fas fa-plus icon" style="color-white"></i></a>
+                <a class="btn-pdf2" onclick="makepdf5({{id_paciente}})">
+                  <i class="far fa-file-pdf"></i></a>
+                {{/each}}
+              </div>
+              {{/if}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

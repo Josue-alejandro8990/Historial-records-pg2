@@ -1,0 +1,51 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <a class="btn-return" href="/profile/perfil/{{paciente.id_paciente}}">
+                        <i class="fas fa-remove icon" style="color-white"></i></a>
+                    <br>
+                    <h3>Creación De Tratamiento Del Paciente ID:{{paciente.id_paciente}}</h3>
+                </div>
+                <form action="/newinfo/newtratamiento/{{paciente.id_paciente}}" method="POST">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <p class="p-nombres2">DESCRIPCION : </p>
+                                    <input type="type" name="descripcion" placeholder="Ingrese un valor"
+                                        class="form-control" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2">MEDICAMENTO : </p>
+                                    <input type="type" name="medicamento" placeholder="Ingrese un valor"
+                                        class="form-control" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2">DOSIS : </p>
+                                    <input type="type" name="dosis" placeholder="Ingrese un valor" class="form-control"
+                                        autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2">DURACION DEL TRATAMIENTO : </p>
+                                    <input type="type" name="tiempo" placeholder="Ingrese un valor" class="form-control"
+                                        autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <p class="p-nombres2">FECHA DE ASGINACION : </p>
+                                    <input class="form-control" type="date" name="fecha" placeholder="Ingrese un valor">
+
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-success btn-block">
+                                        Guardar Registro
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
